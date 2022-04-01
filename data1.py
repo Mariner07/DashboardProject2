@@ -5,13 +5,6 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv')
 
-page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Complicated"))
-if page== "Simple: 1 country":
-  simpleGraph()
-  
-  
-                           
-
 st.title('COVID dashboard Hélène & Maxime & Nurlan')
 
 def simpleGraph():
@@ -24,6 +17,14 @@ def simpleGraph():
   sns.lineplot(data=data['total_deaths'])
   plt.show()
   return fig
+
+page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Complicated"))
+if page== "Simple: 1 country":
+  simpleGraph()
+  
+  
+                           
+
 
 
 st.balloons()
