@@ -25,13 +25,13 @@ country_options = st.multiselect(
 
 st.write('You selected:', country_options)
 
-def simpleGraph(options):
+def simpleGraph():
   fig=plt.figure(figsize=(14,6))
   plt.title("Death toll")
   plt.xticks(rotation=90)
   plt.xlabel("Date", fontsize=8)
   plt.ylabel("Total deaths per million", fontsize=8)
-  sns.lineplot(data=data[data['location']==country_options]['total_deaths'])
+  sns.lineplot(data=data['total_deaths'])
   return fig
 
 
@@ -39,7 +39,7 @@ page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Complica
 if page== "Simple: 1 country":
   if st.checkbox('Show simple graph'):
     st.subheader('Simple graph')
-    st.pyplot(simpleGraph(country_options), use_container_width = True)
+    st.pyplot(simpleGraph(), use_container_width = True)
   
   
 
