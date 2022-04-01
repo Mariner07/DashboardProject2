@@ -18,12 +18,7 @@ data_load_state.text("Data is cooked")
 
 st.title('COVID dashboard Hélène & Maxime & Nurlan')
 
-country_options = st.multiselect(
-     'Which countries do you want do display ?',
-     data['location'].unique(),
-     ['France'])
 
-st.write('You selected:', country_options)
 
 def simpleGraph():
   fig=plt.figure(figsize=(14,6))
@@ -38,10 +33,19 @@ def simpleGraph():
 page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Home Page"))
 if page== "Simple: 1 country":
   if st.checkbox('Show simple graph'):
+    country_options = st.multiselect(
+     'Which countries do you want do display ?',
+     data['location'].unique(),
+     ['France'])
+
+    st.write('You selected:', country_options)
     st.subheader('Simple graph')
     st.pyplot(simpleGraph(), use_container_width = True)
+ else:
+    st.balloons()
+
+    
   
   
 
-st.balloons()
 
