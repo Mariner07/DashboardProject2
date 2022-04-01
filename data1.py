@@ -35,7 +35,7 @@ def simpleGraph():
   return fig
 
 
-page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Complicated"))
+page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Home Page"))
 if page== "Simple: 1 country":
   if st.checkbox('Show simple graph'):
     st.subheader('Simple graph')
