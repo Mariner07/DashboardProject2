@@ -14,3 +14,6 @@ plt.xlabel("Date", fontsize=8)
 plt.ylabel("Total deaths per million", fontsize=8)
 sns.lineplot(data=data['total_deaths'])
 plt.show()
+
+st.balloons()
+
