@@ -18,6 +18,10 @@ data_load_state.text("Data is cooked")
 
 st.title('COVID dashboard Hélène & Maxime & Nurlan')
 
+if st.checkbox('Show raw data'):
+    st.subheader('Raw data')
+    st.write(data)
+
 def simpleGraph():
   fig=plt.figure(figsize=(14,6))
   plt.title("Death toll")
