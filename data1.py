@@ -27,6 +27,13 @@ def simpleGraph():
   sns.lineplot(data=data['total_deaths'])
   return fig
 
+options = st.multiselect(
+     'Which countries do you want do display ?',
+     data['location'].unique(),
+     ['France'])
+
+st.write('You selected:', options)
+
 page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Complicated"))
 if page== "Simple: 1 country":
   if st.checkbox('Show simple graph'):
