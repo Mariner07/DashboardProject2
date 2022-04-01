@@ -1,6 +1,7 @@
 # DashboardProject2
 
 This repository hosts the code of a dashboard hosted on streamlit.io
+
 This dashboard is designed to explore Covid data of *Our World in Data*
 
 # Setup
