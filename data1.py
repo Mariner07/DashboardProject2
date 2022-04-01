@@ -5,4 +5,4 @@ data = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/
 
 st.title('COVID dashboard Hélène & Maxime & Nurlan')
 
-st.balloons
+st.balloons()
