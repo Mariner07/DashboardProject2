@@ -18,10 +18,6 @@ data_load_state.text("Data is cooked")
 
 st.title('COVID dashboard Hélène & Maxime & Nurlan')
 
-if st.checkbox('Show raw data'):
-    st.subheader('Raw data')
-    st.write(data)
-
 def simpleGraph():
   fig=plt.figure(figsize=(14,6))
   plt.title("Death toll")
@@ -33,8 +29,9 @@ def simpleGraph():
 
 page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Complicated"))
 if page== "Simple: 1 country":
-    
-  st.pyplot(simpleGraph(), use_container_width = True)
+  if st.checkbox('Show simple graph'):
+    st.subheader('Simple graph')
+    st.pyplot(simpleGraph(), use_container_width = True)
   
   
 
