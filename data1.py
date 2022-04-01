@@ -22,7 +22,7 @@ def simpleGraph():
 
 page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Complicated"))
 if page== "Simple: 1 country":
-  st.line_chart(simpleGraph(), use_container_width = True)
+  st.pyplot(simpleGraph(), use_container_width = True)
   
   
 
