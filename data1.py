@@ -39,7 +39,7 @@ page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Complica
 if page== "Simple: 1 country":
   if st.checkbox('Show simple graph'):
     st.subheader('Simple graph')
-    st.pyplot(simpleGraph(), use_container_width = True)
+    st.pyplot(simpleGraph(options), use_container_width = True)
   
   
 
