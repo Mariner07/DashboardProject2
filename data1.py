@@ -18,12 +18,12 @@ data_load_state.text("Data is cooked")
 
 st.title('COVID dashboard Hélène & Maxime & Nurlan')
 
-options = st.multiselect(
+country_options = st.multiselect(
      'Which countries do you want do display ?',
      data['location'].unique(),
      ['France'])
 
-st.write('You selected:', options)
+st.write('You selected:', country_options)
 
 def simpleGraph(options):
   fig=plt.figure(figsize=(14,6))
@@ -31,7 +31,7 @@ def simpleGraph(options):
   plt.xticks(rotation=90)
   plt.xlabel("Date", fontsize=8)
   plt.ylabel("Total deaths per million", fontsize=8)
-  sns.lineplot(data=data[data['location']==options]['total_deaths'])
+  sns.lineplot(data=data[data['location']==country_options]['total_deaths'])
   return fig
 
 
@@ -39,7 +39,7 @@ page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Complica
 if page== "Simple: 1 country":
   if st.checkbox('Show simple graph'):
     st.subheader('Simple graph')
-    st.pyplot(simpleGraph(options), use_container_width = True)
+    st.pyplot(simpleGraph(country_options), use_container_width = True)
   
   
 
