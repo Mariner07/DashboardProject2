@@ -41,7 +41,7 @@ if page== "Simple: 1 country":
     st.subheader('Simple graph')
     st.pyplot(simpleGraph(country_options), use_container_width = True)
     
-#Slider to chose date
+#Date slider
 show_timerange = st.sidebar.checkbox("Show date range")
 if show_timerange == True:
     # Comute timerange
