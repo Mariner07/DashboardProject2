@@ -34,6 +34,9 @@ def simpleGraph(country_options):
   sns.lineplot(data=data[data['location'].isin(country_options)]['total_deaths'])
   return fig
 
+#add def plot_cases():
+#add def plot_deaths():
+#add def plot_recovered():
 
 page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Home Page"))
 if page== "Simple: 1 country":
@@ -50,3 +53,14 @@ if show_timerange == True:
     day_date = pd.to_datetime(st.sidebar.slider("Date choice", min_value=min_ts, max_value=max_ts, value=max_ts))
     st.write(f"Data for {day_date.date()}")
     df = data[(data['date'] == day_date)]
+
+#Selectbox for data
+select_event = st.sidebar.selectbox('Data options', ('Cases', 'Deaths', 'Recovered'))
+if select_event == 'Cases':
+    st.plotly_chart(plot_cases(), use_container_width=True)
+
+if select_event == 'Deaths':
+    st.plotly_chart(plot_deaths(), use_container_width=True)
+
+if select_event == 'Recovered':
+    st.plotly_chart(plot_recovered(), use_container_width=True)
