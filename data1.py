@@ -40,3 +40,13 @@ if page== "Simple: 1 country":
   if st.checkbox('Show simple graph'):
     st.subheader('Simple graph')
     st.pyplot(simpleGraph(country_options), use_container_width = True)
+    
+#Slider to chose date
+show_timerange = st.sidebar.checkbox("Show date range")
+if show_timerange == True:
+    # Comute timerange
+    min_ts = min(df[DATE_COLUMN]).to_pydatetime()
+    max_ts = max(df[DATE_COLUMN]).to_pydatetime()
+    day_date = pd.to_datetime(st.sidebar.slider("Date choice", min_value=min_ts, max_value=max_ts, value=max_ts))
+    st.write(f"Data for {day_date.date()}")
+    df = data[(data['date'] == day_date)]
