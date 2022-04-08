@@ -18,7 +18,7 @@ data = load_data()
 data_load_state.text("Data is cooked")
 
 #Page configuration
-st.title('COVID dashboard HMN & co.')
+st.title('COVID dashboard HMN & co. ☠️')
 
 #Multiselection tool
 not_country_list=['Africa', 'Asia', 'Europe', 'European Union', 'International', 'North America', 'Oceania', 'South America', 'Upper middle income']
@@ -49,7 +49,7 @@ slider_range = st.slider("Date range", value=(min_ts, max_ts))
 #data = data[(data['date'] == day_date)]
 
 #Selectbox for data
-select_data = st.sidebar.selectbox('Data options', ('Cases', 'Deaths'))
+select_data = st.sidebar.selectbox('Data options', ('Cases 😷', 'Deaths ⚰️'))
 
 #Selectbox for figure format
 select_figure = st.sidebar.selectbox('Figure format', ("Raw number", "Cumulated number", "7 day rolling average"))
