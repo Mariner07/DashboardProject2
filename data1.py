@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
+import plotly as px
 
 DATE_COLUMN = 'date'
 
@@ -34,11 +35,11 @@ def simpleGraph(country_options):
   sns.lineplot(data=data[data['location'].isin(country_options)]['total_deaths'])
   return fig
 
-add def plot_cases():
+def plot_cases():
     fig=px.line(data, x=data['date'], y=data['new_cases'], title = "Cases")
     return fig
 
-add def plot_deaths():
+def plot_deaths():
     fig=px.line(data, x=data['date'], y=data['new_deaths'], title = "Death toll")
     return fig
 
