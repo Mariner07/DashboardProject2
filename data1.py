@@ -52,7 +52,7 @@ select_data = st.sidebar.selectbox('Data options', ('Cases', 'Deaths'))
 select_figure = st.sidebar.selectbox('Figure format', ("Number", "Cumulated number", "7 day rolling average"))
 
 if select_data == 'Cases' and select_figure == 'Number':
-    st.plotly_chart(plot(select_figure='new_cases_per_million'), use_container_width=True)
+    st.plotly_chart(plot(select_figure='new_cases_per_million'), use_container_width=True, color='location')
     
 if select_data == 'Cases' and select_figure == 'Cumulated number':
     st.plotly_chart(plot(select_figure='total_cases_per_million'), use_container_width=True)
