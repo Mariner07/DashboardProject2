@@ -1,11 +1,19 @@
 # DashboardProject2
 
-This repo hosts the code of a dashboard hosted on streamlit.io
+This repository hosts the code of a dashboard hosted on streamlit.io
+
 This dashboard is designed to explore Covid data of *Our World in Data*
 
-# Set Up
+# Setup
 
-Create a python virtual environment and install the requirement.txt package with the following command:
+- [ ] Clone the repository
+- [ ] Go in the newly created directory
+- [ ] Create a python virtual environment 
+- [ ] Activate the python virtual environment
+- [ ] Install the requirements.txt package with the following command:
 
-pip install -r requirements.txt
+```console
+python -m pip install -r requirements.txt
+```
+
 

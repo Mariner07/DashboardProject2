@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 DATE_COLUMN = 'date'
 
@@ -45,7 +46,7 @@ add def plot_cases():
 
 add def plot_deaths():
     fig=px.line(filtered_countries(country_options), x=data['date'], y=data['new_deaths'], title = "Death toll")
-    return fig
+
 
 page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Home Page"))
 if page== "Simple: 1 country":
@@ -64,9 +65,21 @@ if show_timerange == True:
     df = data[(data['date'] == day_date)]
 
 #Selectbox for data
-select_event = st.sidebar.selectbox('Data options', ('Cases', 'Deaths', 'Recovered'))
-if select_event == 'Cases':
+
+select_data = st.sidebar.selectbox('Data options', ('Cases', 'Deaths'))
+if select_data == 'Cases':
     st.plotly_chart(plot_cases(), use_container_width=True)
 
-if select_event == 'Deaths':
+if select_data == 'Deaths':
     st.plotly_chart(plot_deaths(), use_container_width=True)
+    
+#Selectbox for figure format
+#select_figure = st.sidebar.selectbox('Figure format', ("Number", "Cumulated number", "7-day rolling average"))
+#if select_figure == 'Number':
+#    st.plotly_chart(plot_cases(), use_container_width=True)
+
+#if select_figure == 'Cumulater number':
+#    st.plotly_chart(plot_deaths(), use_container_width=True)
+
+#if select_figure == '7-day rolling average':
+#    st.plotly_chart(plot(), use_container_width=True)
