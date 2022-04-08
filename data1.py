@@ -60,7 +60,7 @@ if show_timerange == True:
     df = data[(data['date'] == day_date)]
 
 #Selectbox for data
-select_event = st.sidebar.selectbox('Data options', ('Cases', 'Deaths', 'Recovered'))
+select_event = st.sidebar.selectbox('Data options', ('Cases', 'Deaths'))
 if select_event == 'Cases':
     st.plotly_chart(plot_cases(), use_container_width=True)
 
