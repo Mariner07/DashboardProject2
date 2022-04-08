@@ -35,14 +35,6 @@ data_filtered=filtered_countries(country_options)
 def plot(select_figure, title):
     fig=px.line(data_filtered, x=data_filtered['date'], y=data_filtered[select_figure], title = title)
     return fig
-
-
-page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Home Page"))
-
-if page== "Simple: 1 country":
-  if st.checkbox('Show simple graph'):
-    st.subheader('Simple graph')
-    st.pyplot(simpleGraph(country_options), use_container_width = True)
     
 #Date slider
 show_timerange = st.sidebar.checkbox("Show date range")
