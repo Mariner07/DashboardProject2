@@ -2,7 +2,7 @@ import streamlit as st
 st.set_page_config(
 page_title=xxx,
 page_icon=chart_with_upwards_trend,
-layout=“wide”,
+layout=“centered”,
 initial_sidebar_state=“auto”,
 menu_items=None,
 )
