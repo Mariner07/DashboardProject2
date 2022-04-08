@@ -34,9 +34,13 @@ def simpleGraph(country_options):
   sns.lineplot(data=data[data['location'].isin(country_options)]['total_deaths'])
   return fig
 
-#add def plot_cases():
-#add def plot_deaths():
-#add def plot_recovered():
+add def plot_cases():
+    fig=px.line(data, x=data['date'], y=data['new_cases'], title = "Cases")
+    return fig
+
+add def plot_deaths():
+    fig=px.line(data, x=data['date'], y=data['new_deaths'], title = "Death toll")
+    return fig
 
 page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Home Page"))
 if page== "Simple: 1 country":
@@ -61,6 +65,3 @@ if select_event == 'Cases':
 
 if select_event == 'Deaths':
     st.plotly_chart(plot_deaths(), use_container_width=True)
-
-if select_event == 'Recovered':
-    st.plotly_chart(plot_recovered(), use_container_width=True)
