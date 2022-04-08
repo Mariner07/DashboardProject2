@@ -38,4 +38,4 @@ streamlit run data1.py
 
 ```
 
-Here is the [link](https://share.streamlit.io/mariner07/dashboardproject2/main/data1.py) to lunch the dashboard in the cloud.
+Here is the [link](https://share.streamlit.io/mariner07/dashboardproject2/main/data1.py) to launch the dashboard in the cloud.
