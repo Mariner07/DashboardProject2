@@ -4,6 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
 
+#Loading data
 DATE_COLUMN = 'date'
 
 @st.cache
@@ -16,9 +17,11 @@ data_load_state= st.text("Data is in oven")
 data = load_data()
 data_load_state.text("Data is cooked")
 
-
+#Page configuration
+st.set_page_config(layout="wide")
 st.title('COVID dashboard HMN & co.')
 
+#Multiselection tool
 country_options = st.multiselect(
      'Which countries do you want do display ?',
      data['location'].unique(),
@@ -30,6 +33,7 @@ def filtered_countries(selected_countries_list):
 
 data_filtered=filtered_countries(country_options)
 
+#Plotting
 def plot(select_figure):
     fig=px.line(data_filtered, x=data_filtered['date'], y=data_filtered[select_figure], color='location')
     return fig
