@@ -35,17 +35,17 @@ def filtered_countries(selected_countries_list):
 
 data_filtered=filtered_countries(country_options)
 
+#Date slider
+min_ts = min(data[DATE_COLUMN]).to_pydatetime()
+max_ts = max(data[DATE_COLUMN]).to_pydatetime()
+select_date = st.sidebar.slider("Date range", value=[min_ts, max_ts])
+data_selected = data_filtered[(data_filtered['date'] > min_ts) & (data_filtered['date'] <= max_ts) == True]
+
 #Plotting
 def plot(select_figure):
     fig=px.line(data_filtered, x=data_selected['date'], y=data_filtered[select_figure], color='location')
     fig.update_layout(margin={"r": 0, "t": 50, "l": 0, "b": 0})
     return fig
-    
-#Date slider
-min_ts = min(data[DATE_COLUMN]).to_pydatetime()
-max_ts = max(data[DATE_COLUMN]).to_pydatetime()
-select_date = st.sidebar.slider("Date range", value=[min_ts, max_ts])
-data_selected = (data_filtered['date'] > min_ts) & (data_filtered['date'] <= max_ts)
 
 #Selectbox for data
 select_data = st.sidebar.selectbox('Data options', ('Cases 😷', 'Deaths ⚰️'))
