@@ -32,12 +32,12 @@ def filtered_countries(selected_countries_list):
 
 data_filtered=filtered_countries(country_options)
 
-def plot_cases():
-    fig=px.line(data_filtered, x=data_filtered['date'], y=data_filtered['new_cases'], title = "Cases")
+def plot_cases(figure_format, title):
+    fig=px.line(data_filtered, x=data_filtered['date'], y=data_filtered[select_figure], title = title)
     return fig
 
 def plot_deaths():
-    fig=px.line(data_filtered, x=data_filtered['date'], y=data_filtered['new_deaths'], title = "Death toll")
+    fig=px.line(data_filtered, x=data_filtered['date'], y=data_filtered[select_figure], title = title)
 
     return fig
 
