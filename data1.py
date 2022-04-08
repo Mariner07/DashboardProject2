@@ -39,7 +39,6 @@ def plot(select_figure, title):
     return fig
     
 #Date slider
-show_timerange = st.sidebar.checkbox("Show date range")
 min_ts = min(data[DATE_COLUMN]).to_pydatetime()
 max_ts = max(data[DATE_COLUMN]).to_pydatetime()
 day_date = pd.to_datetime(st.sidebar.slider("Date range", min_value=min_ts, max_value=max_ts, value=(min_ts, max_ts))
