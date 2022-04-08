@@ -39,7 +39,9 @@ data_filtered=filtered_countries(country_options)
 min_ts = min(data[DATE_COLUMN]).to_pydatetime()
 max_ts = max(data[DATE_COLUMN]).to_pydatetime()
 select_date = st.sidebar.slider("Date range", value=[min_ts, max_ts])
-data_selected = data_filtered[(data_filtered['date'] > min_ts) & (data_filtered['date'] <= max_ts)]
+min_ts_reformatted = pd.to_datetime(min_ts)
+max_ts_reformatted = pd.to_datetime(max_ts)
+data_selected = data_filtered[(data_filtered['date'] > min_ts_reformatted) & (data_filtered['date'] <= max_ts_reformatted)]
 
 #Plotting
 def plot(select_figure):
