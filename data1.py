@@ -37,17 +37,19 @@ def simpleGraph(country_options):
 def filtered_countries(selected_countries_list):
     data_filtered= data[data['location'].isin(selected_countries_list)]
     return data_filtered
-    
 
-add def plot_cases():
-    fig=px.line(filtered_countries(country_options), x=data['date'], y=data['new_cases'], title = "Cases")
+data_filtered=filtered_countries(country_options)
+
+def plot_cases():
+    fig=px.line(data_filtered, x=data_filtered['date'], y=data_filtered['new_cases'], title = "Cases")
     return fig
 
-add def plot_deaths():
-    fig=px.line(filtered_countries(country_options), x=data['date'], y=data['new_deaths'], title = "Death toll")
+def plot_deaths():
+    fig=px.line(data_filtered, x=data_filtered['date'], y=data_filtered['new_deaths'], title = "Death toll")
     return fig
 
 page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Home Page"))
+
 if page== "Simple: 1 country":
   if st.checkbox('Show simple graph'):
     st.subheader('Simple graph')
