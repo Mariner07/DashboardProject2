@@ -35,6 +35,7 @@ data_filtered=filtered_countries(country_options)
 #Plotting
 def plot(select_figure):
     fig=px.line(data_filtered, x=data_filtered['date'], y=data_filtered[select_figure], color='location')
+    fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
     return fig
     
 #Date slider
