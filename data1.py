@@ -60,9 +60,20 @@ if show_timerange == True:
     df = data[(data['date'] == day_date)]
 
 #Selectbox for data
-select_event = st.sidebar.selectbox('Data options', ('Cases', 'Deaths'))
-if select_event == 'Cases':
+select_data = st.sidebar.selectbox('Data options', ('Cases', 'Deaths'))
+if select_data == 'Cases':
     st.plotly_chart(plot_cases(), use_container_width=True)
 
-if select_event == 'Deaths':
+if select_data == 'Deaths':
     st.plotly_chart(plot_deaths(), use_container_width=True)
+    
+#Selectbox for figure format
+#select_figure = st.sidebar.selectbox('Figure format', ("Number", "Cumulated number", "7-day rolling average"))
+#if select_figure == 'Number':
+#    st.plotly_chart(draw_map_cases(), use_container_width=True)
+
+#if select_figure == 'Cumulater number':
+#    st.plotly_chart(draw_map_deaths(), use_container_width=True)
+
+#if select_figure == '7-day rolling average':
+#    st.plotly_chart(draw_map_vaccine(), use_container_width=True)
