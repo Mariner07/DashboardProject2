@@ -43,8 +43,8 @@ show_timerange = st.sidebar.checkbox("Show date range")
 min_ts = min(data[DATE_COLUMN]).to_pydatetime()
 max_ts = max(data[DATE_COLUMN]).to_pydatetime()
 day_date = pd.to_datetime(st.sidebar.slider("Date range", min_value=min_ts, max_value=max_ts, value=(min_ts, max_ts))
-st.write(f"Data for {day_date.date()}")
-df = data[(data['date'] == day_date)]
+#st.write(f"Data for {day_date.date()}")
+#df = data[(data['date'] == day_date)]
 
 #Selectbox for data
 select_data = st.sidebar.selectbox('Data options', ('Cases', 'Deaths'))
