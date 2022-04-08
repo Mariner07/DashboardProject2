@@ -20,6 +20,14 @@ data_load_state.text("Data is cooked")
 #Page configuration
 st.title('COVID dashboard HMN & co.')
 
+st.set_page_config(
+page_title=xxx,
+page_icon=chart_with_upwards_trend,
+layout=“wide”,
+initial_sidebar_state=“auto”,
+menu_items=None,
+)
+
 #Multiselection tool
 country_options = st.multiselect(
      'Which countries do you want do display ?',
@@ -41,7 +49,7 @@ def plot(select_figure, title):
 #Date slider
 min_ts = min(data[DATE_COLUMN]).to_pydatetime()
 max_ts = max(data[DATE_COLUMN]).to_pydatetime()
-day_date = pd.to_datetime(st.sidebar.slider("Date range", value=[min_ts, max_ts])
+select_date = pd.to_datetime(st.sidebar.slider("Date range", value=[min_ts, max_ts])
 #st.write(f"Data for {day_date.date()}")
 #data = data[(data['date'] == day_date)]
 
