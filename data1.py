@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
-import plotly as px
+import plotly.express as px
 
 DATE_COLUMN = 'date'
 
