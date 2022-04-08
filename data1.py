@@ -51,9 +51,9 @@ if show_timerange == True:
 select_data = st.sidebar.selectbox('Data options', ('Cases', 'Deaths'))
 
 #Selectbox for figure format
-select_figure = st.sidebar.selectbox('Figure format', ("Number", "Cumulated number", "7 day rolling average"))
+select_figure = st.sidebar.selectbox('Figure format', ("Raw number", "Cumulated number", "7 day rolling average"))
 
-if select_data == 'Cases' and select_figure == 'Number':
+if select_data == 'Cases' and select_figure == 'Raw number':
     st.plotly_chart(plot(select_figure='new_cases_per_million'), use_container_width=True)
     
 if select_data == 'Cases' and select_figure == 'Cumulated number':
@@ -62,7 +62,7 @@ if select_data == 'Cases' and select_figure == 'Cumulated number':
 if select_data == 'Cases' and select_figure == '7 day rolling average':
     st.plotly_chart(plot(select_figure='new_cases_smoothed_per_million'), use_container_width=True)
     
-if select_data == 'Deaths' and select_figure == 'Number':
+if select_data == 'Deaths' and select_figure == 'Raw number':
     st.plotly_chart(plot(select_figure='new_deaths_per_million'), use_container_width=True)
     
 if select_data == 'Deaths' and select_figure == 'Cumulated number':
