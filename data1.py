@@ -41,7 +41,7 @@ def plot(select_figure):
 #Date slider
 min_ts = min(data[DATE_COLUMN]).to_pydatetime()
 max_ts = max(data[DATE_COLUMN]).to_pydatetime()
-start_clr, end_clr = pd.to_datetime(st.sidebar.slider("Date range", value=[min_ts, max_ts])
+start_clr, end_clr = pd.to_datetime(st.sidebar.select_slider("Date range", value=(min_ts, max_ts))
  
 #st.write(f"Data for {day_date.date()}")
 #data = data[(data['date'] == day_date)]
