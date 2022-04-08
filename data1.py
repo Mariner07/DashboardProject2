@@ -48,9 +48,8 @@ if page== "Simple: 1 country":
 #Date slider
 show_timerange = st.sidebar.checkbox("Show date range")
 if show_timerange == True:
-    # Comute timerange
-    min_ts = min(df[DATE_COLUMN]).to_pydatetime()
-    max_ts = max(df[DATE_COLUMN]).to_pydatetime()
+    min_ts = min(data[DATE_COLUMN]).to_pydatetime()
+    max_ts = max(data[DATE_COLUMN]).to_pydatetime()
     day_date = pd.to_datetime(st.sidebar.slider("Date choice", min_value=min_ts, max_value=max_ts, value=max_ts))
     st.write(f"Data for {day_date.date()}")
     df = data[(data['date'] == day_date)]
