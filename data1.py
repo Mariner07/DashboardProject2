@@ -39,9 +39,9 @@ def plot(select_figure):
     return fig
     
 #Date slider
-min_ts = min(data[DATE_COLUMN]).to_pydatetime()
-max_ts = max(data[DATE_COLUMN]).to_pydatetime()
-start_clr, end_clr = pd.to_datetime(st.sidebar.select_slider("Date range", value=(min_ts, max_ts))
+#min_ts = min(data[DATE_COLUMN]).to_pydatetime()
+#max_ts = max(data[DATE_COLUMN]).to_pydatetime()
+#start_clr, end_clr = pd.to_datetime(st.sidebar.select_slider("Date range", value=(min_ts, max_ts))
  
 #st.write(f"Data for {day_date.date()}")
 #data = data[(data['date'] == day_date)]
@@ -52,8 +52,8 @@ select_data = st.sidebar.selectbox('Data options', ('Cases', 'Deaths'))
 #Selectbox for figure format
 select_figure = st.sidebar.selectbox('Figure format', ("Raw number", "Cumulated number", "7 day rolling average"))
 
-#if select_data == 'Cases' and select_figure == 'Raw number':
-#    st.plotly_chart(plot(select_figure='new_cases_per_million').update_layout(title='Raw Number of Covid 19 Cases', xaxis_title='Date', yaxis_title='Raw Number of Cases (per million)'), use_container_width=True)
+if select_data == 'Cases' and select_figure == 'Raw number':
+    st.plotly_chart(plot(select_figure='new_cases_per_million').update_layout(title='Raw Number of Covid 19 Cases', xaxis_title='Date', yaxis_title='Raw Number of Cases (per million)'), use_container_width=True)
     
 if select_data == 'Cases' and select_figure == 'Cumulated number':
     st.plotly_chart(plot(select_figure='total_cases_per_million'), use_container_width=True)
