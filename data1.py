@@ -17,7 +17,7 @@ data = load_data()
 data_load_state.text("Data is cooked")
 
 
-st.title('COVID dashboard Hélène & Maxime & Nurlan')
+st.title('COVID dashboard HMN & co.')
 
 country_options = st.multiselect(
      'Which countries do you want do display ?',
