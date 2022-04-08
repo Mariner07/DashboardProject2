@@ -18,7 +18,6 @@ data = load_data()
 data_load_state.text("Data is cooked")
 
 #Page configuration
-st.set_page_config(layout="wide")
 st.title('COVID dashboard HMN & co.')
 
 #Multiselection tool
