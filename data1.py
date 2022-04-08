@@ -1,5 +1,13 @@
-import pandas as pd
 import streamlit as st
+st.set_page_config(
+page_title=xxx,
+page_icon=chart_with_upwards_trend,
+layout=“wide”,
+initial_sidebar_state=“auto”,
+menu_items=None,
+)
+
+import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
@@ -19,14 +27,6 @@ data_load_state.text("Data is cooked")
 
 #Page configuration
 st.title('COVID dashboard HMN & co.')
-
-st.set_page_config(
-page_title=xxx,
-page_icon=chart_with_upwards_trend,
-layout=“wide”,
-initial_sidebar_state=“auto”,
-menu_items=None,
-)
 
 #Multiselection tool
 country_options = st.multiselect(
