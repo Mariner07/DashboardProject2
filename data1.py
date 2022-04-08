@@ -33,7 +33,7 @@ def filtered_countries(selected_countries_list):
 data_filtered=filtered_countries(country_options)
 
 def plot(select_figure):
-    fig=px.line(data_filtered, x=data_filtered['date'], y=data_filtered[select_figure])
+    fig=px.line(data_filtered, x=data_filtered['date'], y=data_filtered[select_figure], color='location')
     return fig
     
 #Date slider
