@@ -21,9 +21,12 @@ data_load_state.text("Data is cooked")
 st.title('COVID dashboard HMN & co.')
 
 #Multiselection tool
+not_country_list=['Africa', 'Asia', 'Europe', 'European Union', 'International', 'North America', 'Oceania', 'South America', 'Upper middle income']
+data_with_valid_countries= data[~data['location'].isin(not_country_list)]
+
 country_options = st.multiselect(
      'Which countries do you want do display ?',
-     data['location'].unique(),
+     data_with_valid_countries['location'].unique(),
      ['France'])
 
 def filtered_countries(selected_countries_list):
