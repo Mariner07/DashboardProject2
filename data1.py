@@ -37,6 +37,7 @@ def plot_cases():
 
 def plot_deaths():
     fig=px.line(filtered_countries(country_options), x=data['date'], y=data['new_deaths'], title = "Death toll")
+    return fig
 
 
 page = st.sidebar.selectbox("Dashboard Options", ("Simple: 1 country", "Home Page"))
