@@ -10,10 +10,10 @@ DATE_COLUMN = 'date'
 @st.cache
 def load_data():
     data = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv')
-    data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
+    data[DATE_COLUMN] = data[DATE_COLUMN].to_pydatetime()
     return data
 
-data_load_state= st.text("Data is in oven")
+data_load_state= st.text("Data is in the oven")
 data = load_data()
 data_load_state.text("Data is cooked")
 
