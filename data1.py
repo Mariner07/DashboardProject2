@@ -42,11 +42,11 @@ def plot(select_figure):
     return fig
     
 #Date slider
-min_ts = min(data[DATE_COLUMN]).to_pydatetime()
-max_ts = max(data[DATE_COLUMN]).to_pydatetime()
-slider_range = st.slider("Date range", value=(min_ts, max_ts))
-#st.write(f"Data for {day_date.date()}")
-#data = data[(data['date'] == day_date)]
+min_ts = min(data[DATE_COLUMN])
+max_ts = max(data[DATE_COLUMN])
+select_date = st.sidebar.slider("Date range", value=[min_ts, max_ts])
+st.write(f"Data for {select_date.value}")
+data = data['date'].between(min_ts, max_ts, inclusive=True)
 
 #Selectbox for data
 select_data = st.sidebar.selectbox('Data options', ('Cases 😷', 'Deaths ⚰️'))
