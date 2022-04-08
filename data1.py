@@ -54,21 +54,21 @@ select_data = st.sidebar.selectbox('Data options', ('Cases 😷', 'Deaths ⚰️
 #Selectbox for figure format
 select_figure = st.sidebar.selectbox('Figure format', ("Raw number", "Cumulated number", "7 day rolling average"))
 
-if select_data == 'Cases' and select_figure == 'Raw number':
+if select_data == 'Cases 😷' and select_figure == 'Raw number':
     st.plotly_chart(plot(select_figure='new_cases_per_million').update_layout(title='Raw Number of Covid 19 Cases', xaxis_title='Date', yaxis_title='Raw Number of Cases (per million)'), use_container_width=True)
     
-if select_data == 'Cases' and select_figure == 'Cumulated number':
+if select_data == 'Cases 😷' and select_figure == 'Cumulated number':
     st.plotly_chart(plot(select_figure='total_cases_per_million').update_layout(title='Cumulated Number of Covid 19 Cases', xaxis_title='Date', yaxis_title='Cumulated Number of Cases (per million)'), use_container_width=True)
     
-if select_data == 'Cases' and select_figure == '7 day rolling average':
+if select_data == 'Cases 😷' and select_figure == '7 day rolling average':
     st.plotly_chart(plot(select_figure='new_cases_smoothed_per_million').update_layout(title='7 Days Rolling Average of Covid 19 Cases', xaxis_title='Date', yaxis_title='7 Days Rolling Average (per million)'), use_container_width=True)
     
-if select_data == 'Deaths' and select_figure == 'Raw number':
+if select_data == 'Deaths ⚰️' and select_figure == 'Raw number':
     st.plotly_chart(plot(select_figure='new_deaths_per_million').update_layout(title='Raw Number of Covid 19 Deaths', xaxis_title='Date', yaxis_title='Raw Number of Deaths (per million)'), use_container_width=True)
     
-if select_data == 'Deaths' and select_figure == 'Cumulated number':
+if select_data == 'Deaths ⚰️' and select_figure == 'Cumulated number':
     st.plotly_chart(plot(select_figure='total_deaths_per_million').update_layout(title='Cumulated Number of Covid 19 Deaths', xaxis_title='Date', yaxis_title='Cumulated Number of Deaths (per million)'), use_container_width=True)
     
-if select_data == 'Deaths' and select_figure == '7 day rolling average':
+if select_data == 'Deaths ⚰️' and select_figure == '7 day rolling average':
     st.plotly_chart(plot(select_figure='new_deaths_smoothed_per_million').update_layout(title='7 Days Rolling Average of Covid 19 Deaths', xaxis_title='Date', yaxis_title='7 Days Rolling Average of Deaths (per million)'), use_container_width=True)
     
