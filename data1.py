@@ -52,8 +52,8 @@ select_data = st.sidebar.selectbox('Data options', ('Cases', 'Deaths'))
 #Selectbox for figure format
 select_figure = st.sidebar.selectbox('Figure format', ("Raw number", "Cumulated number", "7 day rolling average"))
 
-if select_data == 'Cases' and select_figure == 'Raw number':
-    st.plotly_chart(plot(select_figure='new_cases_per_million').update_layout(title='Raw Number of Covid 19 Cases', xaxis_title='Date', yaxis_title='Raw Number of Cases (per million)'), use_container_width=True)
+#if select_data == 'Cases' and select_figure == 'Raw number':
+#    st.plotly_chart(plot(select_figure='new_cases_per_million').update_layout(title='Raw Number of Covid 19 Cases', xaxis_title='Date', yaxis_title='Raw Number of Cases (per million)'), use_container_width=True)
     
 if select_data == 'Cases' and select_figure == 'Cumulated number':
     st.plotly_chart(plot(select_figure='total_cases_per_million'), use_container_width=True)
