@@ -26,15 +26,6 @@ country_options = st.multiselect(
 
 st.write('You selected:', country_options)
 
-def simpleGraph(country_options):
-  fig=plt.figure(figsize=(14,6))
-  plt.title("Death toll")
-  plt.xticks(rotation=90)
-  plt.xlabel("Date", fontsize=8)
-  plt.ylabel("Total deaths per million", fontsize=8)
-  sns.lineplot(data=data[data['location'].isin(country_options)]['total_deaths'])
-  return fig
-
 def plot_cases():
     fig=px.line(data, x=data['date'], y=data['new_cases'], title = "Cases")
     return fig
@@ -70,10 +61,10 @@ if select_data == 'Deaths':
 #Selectbox for figure format
 #select_figure = st.sidebar.selectbox('Figure format', ("Number", "Cumulated number", "7-day rolling average"))
 #if select_figure == 'Number':
-#    st.plotly_chart(draw_map_cases(), use_container_width=True)
+#    st.plotly_chart(plot_cases(), use_container_width=True)
 
 #if select_figure == 'Cumulater number':
-#    st.plotly_chart(draw_map_deaths(), use_container_width=True)
+#    st.plotly_chart(plot_deaths(), use_container_width=True)
 
 #if select_figure == '7-day rolling average':
-#    st.plotly_chart(draw_map_vaccine(), use_container_width=True)
+#    st.plotly_chart(plot(), use_container_width=True)
