@@ -45,7 +45,7 @@ data_selected = data_filtered[(data_filtered['date'] > min_ts_reformatted) & (da
 
 #Plotting
 def plot(select_figure):
-    fig=px.line(data_filtered, x=data_selected['date'], y=data_filtered[select_figure], color='location')
+    fig=px.line(data_selected, x=data_selected['date'], y=data_selected[select_figure], color='location')
     fig.update_layout(margin={"r": 0, "t": 50, "l": 0, "b": 0})
     return fig
 
