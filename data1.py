@@ -10,7 +10,7 @@ DATE_COLUMN = 'date'
 @st.cache
 def load_data():
     data = pd.read_csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv')
-    data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
+    data[DATE_COLUMN] = data[DATE_COLUMN].to_pydatetime()
     return data
 
 data_load_state= st.text("Data is in the oven")
@@ -39,9 +39,7 @@ data_filtered=filtered_countries(country_options)
 min_ts = min(data[DATE_COLUMN]).to_pydatetime()
 max_ts = max(data[DATE_COLUMN]).to_pydatetime()
 select_date = st.sidebar.slider("Date range", value=[min_ts, max_ts])
-min_ts_reformatted = pd.to_datetime(min_ts)
-max_ts_reformatted = pd.to_datetime(max_ts)
-data_selected = data_filtered[(data_filtered['date'] > min_ts_reformatted) & (data_filtered['date'] <= max_ts_reformatted)]
+data_selected = data_filtered[(data_filtered['date'] > min_ts) & (data_filtered['date'] <= max_ts)]
 
 #Plotting
 def plot(select_figure):
