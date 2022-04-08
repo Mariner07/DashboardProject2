@@ -24,8 +24,6 @@ country_options = st.multiselect(
      data['location'].unique(),
      ['France'])
 
-st.write('You selected:', country_options)
-
 def filtered_countries(selected_countries_list):
     data_filtered= data[data['location'].isin(selected_countries_list)]
     return data_filtered
