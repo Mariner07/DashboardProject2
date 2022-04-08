@@ -45,7 +45,6 @@ def plot(select_figure):
 min_ts = min(data[DATE_COLUMN]).to_pydatetime()
 max_ts = max(data[DATE_COLUMN]).to_pydatetime()
 select_date = st.sidebar.slider("Date range", value=[min_ts, max_ts])
-st.write(f"Data for {select_date.value}")
 data = data['date'].between(min_ts, max_ts, inclusive=True)
 
 #Selectbox for data
