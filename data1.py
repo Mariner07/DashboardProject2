@@ -32,13 +32,8 @@ def filtered_countries(selected_countries_list):
 
 data_filtered=filtered_countries(country_options)
 
-def plot_cases(figure_format, title):
+def plot(select_figure, title):
     fig=px.line(data_filtered, x=data_filtered['date'], y=data_filtered[select_figure], title = title)
-    return fig
-
-def plot_deaths():
-    fig=px.line(data_filtered, x=data_filtered['date'], y=data_filtered[select_figure], title = title)
-
     return fig
 
 
@@ -60,19 +55,25 @@ if show_timerange == True:
 
 #Selectbox for data
 select_data = st.sidebar.selectbox('Data options', ('Cases', 'Deaths'))
-if select_data == 'Cases':
-    st.plotly_chart(plot_cases(), use_container_width=True)
 
-if select_data == 'Deaths':
-    st.plotly_chart(plot_deaths(), use_container_width=True)
-    
 #Selectbox for figure format
-#select_figure = st.sidebar.selectbox('Figure format', ("Number", "Cumulated number", "7-day rolling average"))
-#if select_figure == 'Number':
-#    st.plotly_chart(plot_cases(), use_container_width=True)
+select_figure = st.sidebar.selectbox('Figure format', ("Number", "Cumulated number", "7 day rolling average"))
 
-#if select_figure == 'Cumulater number':
-#    st.plotly_chart(plot_deaths(), use_container_width=True)
-
-#if select_figure == '7-day rolling average':
-#    st.plotly_chart(plot(), use_container_width=True)
+if select_data == 'Cases' & select_figure == 'Number':
+    st.plotly_chart(plot(select_figure='new_cases'), use_container_width=True)
+    
+if select_data == 'Cases' & select_figure == 'Cumulated number':
+    st.plotly_chart(plot(select_figure='total_cases'), use_container_width=True)
+    
+if select_data == 'Cases' & select_figure == '7 day rolling average':
+    st.plotly_chart(plot(select_figure='new_cases_smoothed'), use_container_width=True)
+    
+if select_data == 'Deaths' & select_figure == 'Number':
+    st.plotly_chart(plot(select_figure='new_deaths'), use_container_width=True)
+    
+if select_data == 'Deaths' & select_figure == 'Cumulated number':
+    st.plotly_chart(plot(select_figure='total_deaths'), use_container_width=True)
+    
+if select_data == 'Deaths' & select_figure == '7 day rolling average':
+    st.plotly_chart(plot(select_figure='new_deaths_smoothed'), use_container_width=True)
+    
