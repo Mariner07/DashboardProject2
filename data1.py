@@ -26,25 +26,16 @@ country_options = st.multiselect(
 
 st.write('You selected:', country_options)
 
-def simpleGraph(country_options):
-  fig=plt.figure(figsize=(14,6))
-  plt.title("Death toll")
-  plt.xticks(rotation=90)
-  plt.xlabel("Date", fontsize=8)
-  plt.ylabel("Total deaths per million", fontsize=8)
-  sns.lineplot(data=data[data['location'].isin(country_options)]['total_deaths'])
-  return fig
-
 def filtered_countries(selected_countries_list):
     data_filtered= data[data['location'].isin(selected_countries_list)]
     return data_filtered
     
 
-add def plot_cases():
+def plot_cases():
     fig=px.line(filtered_countries(country_options), x=data['date'], y=data['new_cases'], title = "Cases")
     return fig
 
-add def plot_deaths():
+def plot_deaths():
     fig=px.line(filtered_countries(country_options), x=data['date'], y=data['new_deaths'], title = "Death toll")
 
 
@@ -65,7 +56,6 @@ if show_timerange == True:
     df = data[(data['date'] == day_date)]
 
 #Selectbox for data
-
 select_data = st.sidebar.selectbox('Data options', ('Cases', 'Deaths'))
 if select_data == 'Cases':
     st.plotly_chart(plot_cases(), use_container_width=True)
