@@ -1,0 +1,46 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "license": "https://spdx.org/licenses/MIT",
+    "codeRepository": "https://github.com/Mariner07/DashboardProject2.git",
+    "dateCreated": "2022-04-01",
+    "datePublished": "2022-04-22",
+    "dateModified": "2022-04-22",
+    "issueTracker": "https://github.com/Mariner07/DashboardProject2/issues",
+    "name": "DashboardProject_teamHNM",
+    "version": "1.0",
+    "description": "We developed an interactive and automatically updating Covid19 dashboard with open source software. We used Streamlit for the cloud based dashboard, OWID for the data (from Github). We added a substantial amount of options to customise the dashboard.",
+    "applicationCategory": "Health",
+    "keywords": [
+        "Covid",
+        "Covid19",
+        "Pandemic",
+        "Epidemic",
+        "Vaccination",
+        "Death",
+        "Dashboard"
+    ],
+    "programmingLanguage": [
+        "Python"
+    ],
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "Hélène",
+            "familyName": "Herman",
+            "email": "helene.herman@cri-paris.org"
+        },
+        {
+            "@type": "Person",
+            "givenName": "Nurlan",
+            "familyName": "nogoibaev",
+            "email": "nurlan.nogoibaev@cri-paris.org"
+        },
+        {
+            "@type": "Person",
+            "givenName": "Maxime",
+            "familyName": "Gouiran",
+            "email": "maxime.gouiran@cri-paris.org"
+        }
+    ]
+}
