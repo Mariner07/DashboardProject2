@@ -48,7 +48,7 @@ def plot(select_figure):
     return fig
 
 #Selectbox for data
-select_data = st.sidebar.selectbox('Data options', ('Cases 😷', 'Deaths ⚰️', 'Vaccines'))
+select_data = st.sidebar.selectbox('Data options', ('Cases 😷', 'Deaths ⚰️', 'Vaccines 💉'))
 
 #Selectbox for figure format
 select_figure = st.sidebar.selectbox('Figure format', ("Raw number", "Cumulated number", "7 day rolling average"))
@@ -71,12 +71,12 @@ if select_data == 'Deaths ⚰️' and select_figure == 'Cumulated number':
 if select_data == 'Deaths ⚰️' and select_figure == '7 day rolling average':
     st.plotly_chart(plot(select_figure='new_deaths_smoothed_per_million').update_layout(title='7 Days Rolling Average of Covid 19 Deaths', xaxis_title='Date', yaxis_title='7 Days Rolling Average of Deaths (per million)'), use_container_width=True)
 
-if select_data == 'Vaccines' and select_figure == 'Raw number':
+if select_data == 'Vaccines 💉' and select_figure == 'Raw number':
     st.plotly_chart(plot(select_figure='new_vaccinations_smoothed').update_layout(title='Raw Number of Vaccinated', xaxis_title='Date', yaxis_title='Raw Number of Vaccinated'), use_container_width=True)
     
-if select_data == 'Vaccines' and select_figure == 'Cumulated number':
+if select_data == 'Vaccines 💉' and select_figure == 'Cumulated number':
     st.plotly_chart(plot(select_figure='total_vaccinations_per_hundred').update_layout(title='Cumulated Number of Vaccinated', xaxis_title='Date', yaxis_title='Cumulated Number of Vaccinated (per hundred)'), use_container_width=True)
     
-if select_data == 'Vaccines' and select_figure == '7 day rolling average':
+if select_data == 'Vaccines 💉' and select_figure == '7 day rolling average':
     st.plotly_chart(plot(select_figure='new_vaccinations_smoothed_per_million').update_layout(title='7 Days Rolling Average of Vaccinated', xaxis_title='Date', yaxis_title='7 Days Rolling Average of Vaccinated (per million)'), use_container_width=True)
 
